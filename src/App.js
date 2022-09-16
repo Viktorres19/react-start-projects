@@ -1,29 +1,18 @@
 import React from 'react';
 import './index.scss';
+import Modal from './Modal';
 
 function App() {
-  const [count, setCount] = React.useState(0);
+  const [open, setOpen] = React.useState(false);
 
-  const onClickPlus = () => {
-    if (count < 10) {
-      setCount(count + 1);
-    }
-  }
-
-  const onClickMinus = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
+  const toggleModal = () => {
+    setOpen(!open)
   }
 
   return (
     <div className="App">
-      <div>
-        <h2>Счетчик:</h2>
-        <h1>{count}</h1>
-        <button onClick={onClickMinus} className="minus">- Минус</button>
-        <button onClick={onClickPlus} className="plus">Плюс +</button>
-      </div>
+      <button onClick={toggleModal} className="open-modal-btn">✨ Открыть окно</button>
+      <Modal open={open} setOpen={setOpen} toggleModal={toggleModal} />
     </div>
   );
 }
