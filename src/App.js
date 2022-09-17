@@ -4,11 +4,11 @@ import Collection from './Collection';
 import preloader from './../src/assets/images/preloader.gif';
 
 const categories = [
-  { "name": "Все" },
-  { "name": "Море" },
-  { "name": "Горы" },
-  { "name": "Архитектура" },
-  { "name": "Города" }
+  { "name": "Всі" },
+  { "name": "Легка атлетика" },
+  { "name": "Футзал" },
+  { "name": "Волейбол" },
+  { "name": "Міста" }
 ]
 
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Моя колекція фотограцій</h1>
+      <h1>Моя колекція фото</h1>
       <div className="top">
         <ul className="tags">
           {categories.map((obj, index) =>
@@ -58,7 +58,7 @@ const App = () => {
           value={searchValue}
           onChange={onChangeInput}
           className="search-input"
-          placeholder="Поиск по названию"
+          placeholder="Пошук по назві"
         />
       </div>
       <div className="content">
